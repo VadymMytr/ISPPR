@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+            ["C++ (Сі-плюс-плюс) — мова програмування загального призначення[1] з підтримкою кількох парадигм програмування: об'єктно-орієнтованої, узагальненої, процедурної та ін. Б'ярн Страуструп (англ. Bjarne Stroustrup) почав створювати C++ в AT&T Bell Laboratories (Мюррей-Хілл[en], Нью-Джерсі) у 1979 році. На етапі зародження мова мала назву «Сі з класами». Згодом Страуструп перейменував мову на C++ у 1984 р. Має крпіеея в мові програмування С. Вперше описана міжнародним стандартом ISO/IEC 14882:1998 (C++98), найбільш актуальним же є стандарт ISO/IEC 14882:2020 (C++20).У 1990-х роках C++ стала однією з найуживаніших мов програмування загального призначення. Мову використовують для системного програмування, розробки прикладного програмного забезпечення, написання драйверів, потужних серверних та клієнтських програм, а також для розробки розважальних програм, наприклад, відеоігор. C++ суттєво вплинула на інші популярні сьогодні мови програмування: C# та Java."],
+          ]
+        );
+
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'C++'
+          }
+        };
+
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double"></div>
+  </body>
+</html>
